@@ -31,7 +31,7 @@ function field_default_token_help($route_name, RouteMatchInterface $route_match)
  * Implements hook_entity_update().
  * @param \Drupal\field\Entity\FieldConfig $field_config
  */
-function field_default_token_field_config_update(FieldConfig $field_config) {
+function field_default_token_field_config_update(FieldableEntityInterface $field_config) {
   $has_tokens = FALSE;
   if (!empty($field_config->getDefaultValue())) {
     foreach ($field_config->getDefaultValue() as $values) {
@@ -85,8 +85,8 @@ function field_default_token_field_config_update(FieldConfig $field_config) {
   }
 }
 
-function field_default_token_default_value_function(FieldableEntityInterface $entity, FieldDefinitionInterface $definition) {
+/*function field_default_token_default_value_function(FieldableEntityInterface $entity, FieldDefinitionInterface $definition) {
 
   $instance = $definition->
     $entity->
-}
+}*/
